@@ -1,0 +1,12 @@
+webpack:
+
+    # turn development mode on/off (dev middleware / hot reloading)
+    development: true
+
+    # the public path to publish files in dev mode under
+    public.path: /build/
+
+    # the path to the config file
+    config.path: "demo-bundle:resources/webpack.config.dev.js"
+
+    

@@ -1,0 +1,11 @@
+parameters:
+
+    conga.webpack.manager.constructor: "@conga/framework-webpack:WebpackManager"
+
+services:
+
+    # the Webpack manager
+    conga.webpack.manager:
+        constructor: "%conga.webpack.manager.constructor%"
+        tags:
+            - { name: app.middleware, method: onKernelRegisterMiddleware, priority: 0 }

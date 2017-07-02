@@ -1,0 +1,35 @@
+{
+  "name": "@conga/framework-webpack",
+  "version": "2.0.2-dev",
+  "description": "Adds webpack to a conga.js project",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/congajs/conga-webpack.git"
+  },
+  "keywords": [],
+  "author": "Marc Roulias",
+  "license": "MIT",
+  "engines": {
+    "node": "6.0.0"
+  },
+  "dependencies": {
+    "webpack": "^3.0.0",
+    "webpack-dev-middleware": "^1.11.0",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0",
+    "request": "^2.81.0",
+    "@conga/framework": "latest",
+    "@conga/framework-view-twig": "latest",
+    "twig": "1.10.5"
+  },
+  "readmeFilename": "README.md"
+}
