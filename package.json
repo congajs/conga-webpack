@@ -27,9 +27,7 @@
   "devDependencies": {
     "jasmine": "^2.6.0",
     "request": "^2.81.0",
-    "@conga/framework": "latest",
-    "@conga/framework-view-twig": "latest",
-    "twig": "1.10.5"
+    "@conga/framework": "latest"
   },
   "readmeFilename": "README.md"
 }

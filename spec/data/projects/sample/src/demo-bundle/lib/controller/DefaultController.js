@@ -11,13 +11,13 @@ module.exports = class DefaultController extends Controller {
     index(req, res) {
         res.send(`
             <html>
-              <head>
+            <head>
                 <title>Webpack Test</title>
-              </head>
-              <body>
+            </head>
+            <body>
                 <h1>Webpack Test</h1>
                 <script src="/build/bundle.js"></script>
-              </body>
+            </body>
             </html>
         `);
     }
