@@ -20,4 +20,6 @@ webpack:
     public.path: /build/
 
     # the path to the config file
-    config.path: "demo-bundle:resources/public/webpack.common.js"
+    config.paths:
+        - "admin-bundle:resources/public/webpack.common.js"
+        - "demo-bundle:resources/public/webpack.common.js"

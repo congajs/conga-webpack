@@ -6,7 +6,7 @@ webpack:
     # the public path to publish files in dev mode under
     public.path: /build/
 
-    # the path to the config file
-    config.path: "demo-bundle:resources/webpack.config.dev.js"
-
-    
+    # the paths to each of the webpack config files
+    config.paths:
+    #    - "demo-bundle:resources/public/webpack.config.dev.js"
+    #    - "other-bundle:resources/public/webpack.config.dev.js"

@@ -25,9 +25,10 @@
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    "@conga/framework": "latest",
     "jasmine": "^2.6.0",
     "request": "^2.81.0",
-    "@conga/framework": "latest"
+    "webpack-manifest-plugin": "^1.1.0"
   },
   "readmeFilename": "README.md"
 }

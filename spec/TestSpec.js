@@ -17,6 +17,7 @@ describe("Kernel", () => {
         );
 
         kernel.addBundlePaths({
+            'admin-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'admin-bundle'),
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
             '@conga/framework-webpack': path.join(__dirname, '..')
         });
@@ -32,6 +33,23 @@ describe("Kernel", () => {
         request({
 
             uri: "http://localhost:5555/build/bundle.js",
+            method: 'GET'
+
+        }, (error, response, body) => {
+
+            expect(response.statusCode).toEqual(200);
+            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
+
+            done();
+        });
+
+    });
+
+    it("should load a second compiled js file from another bundle", (done) => {
+
+        request({
+
+            uri: "http://localhost:5555/build/admin.bundle.js",
             method: 'GET'
 
         }, (error, response, body) => {

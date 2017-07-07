@@ -4,6 +4,7 @@ bundles:
     all:
 
         # project bundles (from src/ directory)
+        - "admin-bundle"
         - "demo-bundle"
 
         # core conga bundles (from node_modules/ directory)
