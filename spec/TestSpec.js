@@ -59,7 +59,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type'].toLowerCase()).toEqual('application/javascript; charset=utf-8');
+            expect(response.headers['content-type'].toLowerCase()).toMatch('application/javascript');
 
             done();
         });
@@ -76,7 +76,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type'].toLowerCase()).toEqual('application/javascript; charset=utf-8');
+            expect(response.headers['content-type'].toLowerCase()).toMatch('application/javascript');
 
             done();
         });
@@ -93,7 +93,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type'].toLowerCase()).toEqual('application/javascript');
+            expect(response.headers['content-type'].toLowerCase()).toMatch('application/javascript');
 
             done();
         });
@@ -110,7 +110,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type'].toLowerCase()).toEqual('text/css; charset=utf-8');
+            expect(response.headers['content-type'].toLowerCase()).toMatch('text/css');
 
             done();
         });
