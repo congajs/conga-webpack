@@ -1,6 +1,11 @@
+const path = require('path');
+
 module.exports = {
-    entry: './admin.js',
+    context: path.resolve(__dirname),
+    entry: {
+        admin: './admin.js'
+    },
     output: {
-      filename: 'admin.bundle.js'
+      filename: '[name].[hash].bundle.js'
     }
 }

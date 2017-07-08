@@ -6,6 +6,7 @@ const Kernel = require('@conga/framework/lib/kernel/TestKernel');
 describe("Kernel", () => {
 
     let kernel;
+    let registry;
 
     beforeAll((done) => {
 
@@ -17,45 +18,98 @@ describe("Kernel", () => {
         );
 
         kernel.addBundlePaths({
+
+            '@conga/framework-view': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view'),
+            '@conga/framework-view-twig': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view-twig'),
+
+
             'admin-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'admin-bundle'),
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
             '@conga/framework-webpack': path.join(__dirname, '..')
         });
 
         kernel.boot(() => {
+            registry = kernel.container.get('conga.webpack.registry');
             done();
         });
 
     });
+
+
+
+    it("should load hashed files", (done) => {
+
+        setTimeout(() => {
+
+            request({
+
+                uri: "http://localhost:5555/",
+                method: 'GET'
+
+            }, (error, response, body) => {
+
+                expect(response.statusCode).toEqual(200);
+                done();
+            });
+
+        }, 2000);
+
+
+
+    });
+
+
+
+
+
 
     it("should load a compiled js file", (done) => {
 
         request({
 
-            uri: "http://localhost:5555/build/bundle.js",
+            uri: "http://localhost:5555" + registry.get('app1'),
             method: 'GET'
 
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
+            expect(response.headers['content-type']).toEqual('application/javascript');
 
             done();
         });
 
     });
 
-    it("should load a second compiled js file from another bundle", (done) => {
+    it("should load a second compiled js file", (done) => {
+
+
 
         request({
 
-            uri: "http://localhost:5555/build/admin.bundle.js",
+            uri: "http://localhost:5555" + registry.get('app2'),
             method: 'GET'
 
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
+            expect(response.headers['content-type']).toEqual('application/javascript');
+
+            done();
+        });
+
+    });
+
+    it("should load a third compiled js file from another bundle", (done) => {
+
+        request({
+
+            uri: "http://localhost:5555" + registry.get('admin'),
+            method: 'GET'
+
+        }, (error, response, body) => {
+
+            expect(response.statusCode).toEqual(200);
+            expect(response.headers['content-type']).toEqual('application/javascript');
 
             done();
         });

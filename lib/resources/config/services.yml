@@ -1,8 +1,14 @@
 parameters:
 
     conga.webpack.manager.constructor: "@conga/framework-webpack:WebpackManager"
+    conga.webpack.registry.constructor: "@conga/framework-webpack:WebpackRegistry"
+    conga.webpack.helper.constructor: "@conga/framework-webpack:helper/WebpackHelper"
 
 services:
+
+    # the webpack registry
+    conga.webpack.registry:
+        constructor: "@conga/framework-webpack:WebpackRegistry"
 
     # the Webpack manager
     conga.webpack.manager:
@@ -10,3 +16,10 @@ services:
         tags:
             - { name: app.middleware, method: onKernelRegisterMiddleware, priority: 0 }
             - { name: kernel.build, method: onKernelBuild, priority: 0 }
+
+    # template url() helper
+    conga.template.helper.webpack:
+        constructor: "%conga.webpack.helper.constructor%"
+        arguments: ["@conga.webpack.registry"]
+        tags:
+            - { name: template.helper }

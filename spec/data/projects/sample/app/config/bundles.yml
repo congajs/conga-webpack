@@ -9,3 +9,5 @@ bundles:
 
         # core conga bundles (from node_modules/ directory)
         - "@conga/framework-webpack"
+        - "@conga/framework-view"
+        - "@conga/framework-view-twig"

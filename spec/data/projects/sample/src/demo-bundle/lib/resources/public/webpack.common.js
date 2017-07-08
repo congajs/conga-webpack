@@ -1,6 +1,14 @@
+const path = require('path');
+
 module.exports = {
-    entry: './app.js',
+    context: path.resolve(__dirname),
+
+    entry: {
+        app1: './app1.js',
+        app2: './app2.js'
+    },
     output: {
-      filename: 'bundle.js'
+        filename: '[name].[hash].bundle.js'
     }
-}
+
+};
