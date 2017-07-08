@@ -1,11 +1,12 @@
 <html>
 <head>
     <title>Webpack Test</title>
+    <link rel="stylesheet" href="{{ webpack_asset('app1', 'css') }}" />
 </head>
 <body>
     <h1>Webpack Test</h1>
-    <script src="{{ webpack_asset('app1') }}"></script>
-    <script src="{{ webpack_asset('app2') }}"></script>
-    <script src="{{ webpack_asset('admin') }}"></script>
+    <script src="{{ webpack_asset('app1', 'js') }}"></script>
+    <script src="{{ webpack_asset('app2', 'js') }}"></script>
+    <script src="{{ webpack_asset('admin', 'js') }}"></script>
 </body>
 </html>

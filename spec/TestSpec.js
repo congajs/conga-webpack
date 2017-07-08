@@ -59,7 +59,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
+            expect(response.headers['content-type'].toLowerCase()).toEqual('application/javascript; charset=utf-8');
 
             done();
         });
@@ -76,7 +76,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
+            expect(response.headers['content-type'].toLowerCase()).toEqual('application/javascript; charset=utf-8');
 
             done();
         });
@@ -93,7 +93,24 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
+            expect(response.headers['content-type'].toLowerCase()).toEqual('application/javascript');
+
+            done();
+        });
+
+    });
+
+    it("should load a compiled css file", (done) => {
+
+        request({
+
+            uri: "http://localhost:5555" + registry.get('app1', 'css'),
+            method: 'GET'
+
+        }, (error, response, body) => {
+
+            expect(response.statusCode).toEqual(200);
+            expect(response.headers['content-type'].toLowerCase()).toEqual('text/css; charset=utf-8');
 
             done();
         });
