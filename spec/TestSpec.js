@@ -22,7 +22,6 @@ describe("Kernel", () => {
             '@conga/framework-view': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view'),
             '@conga/framework-view-twig': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view-twig'),
 
-
             'admin-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'admin-bundle'),
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
             '@conga/framework-webpack': path.join(__dirname, '..')
@@ -35,33 +34,20 @@ describe("Kernel", () => {
 
     });
 
+    it("should load a page containing webpack_asset()", (done) => {
 
+        request({
 
-    it("should load hashed files", (done) => {
+            uri: "http://localhost:5555/",
+            method: 'GET'
 
-        setTimeout(() => {
+        }, (error, response, body) => {
 
-            request({
-
-                uri: "http://localhost:5555/",
-                method: 'GET'
-
-            }, (error, response, body) => {
-
-                expect(response.statusCode).toEqual(200);
-                done();
-            });
-
-        }, 2000);
-
-
+            expect(response.statusCode).toEqual(200);
+            done();
+        });
 
     });
-
-
-
-
-
 
     it("should load a compiled js file", (done) => {
 
@@ -73,7 +59,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript');
+            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
 
             done();
         });
@@ -81,8 +67,6 @@ describe("Kernel", () => {
     });
 
     it("should load a second compiled js file", (done) => {
-
-
 
         request({
 
@@ -92,7 +76,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript');
+            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
 
             done();
         });
@@ -109,7 +93,7 @@ describe("Kernel", () => {
         }, (error, response, body) => {
 
             expect(response.statusCode).toEqual(200);
-            expect(response.headers['content-type']).toEqual('application/javascript');
+            expect(response.headers['content-type']).toEqual('application/javascript; charset=UTF-8');
 
             done();
         });

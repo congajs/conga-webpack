@@ -6,6 +6,6 @@ module.exports = {
         admin: './admin.js'
     },
     output: {
-      filename: '[name].[hash].bundle.js'
+      filename: '[name].[chunkhash].bundle.js'
     }
 }

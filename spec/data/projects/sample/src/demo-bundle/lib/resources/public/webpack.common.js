@@ -8,7 +8,7 @@ module.exports = {
         app2: './app2.js'
     },
     output: {
-        filename: '[name].[hash].bundle.js'
+        filename: '[name].[chunkhash].bundle.js'
     }
 
 };
