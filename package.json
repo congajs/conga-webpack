@@ -31,8 +31,7 @@
     "@conga/framework-view": "^2.0.3-dev",
     "@conga/framework-view-twig": "^2.0.1-dev",
     "jasmine": "^2.6.0",
-    "request": "^2.81.0",
-    "webpack-manifest-plugin": "^1.1.0"
+    "request": "^2.81.0"
   },
   "readmeFilename": "README.md"
 }
