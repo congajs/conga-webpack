@@ -27,9 +27,9 @@
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
-    "@conga/framework": "latest",
-    "@conga/framework-view": "^2.0.3-dev",
-    "@conga/framework-view-twig": "^2.0.1-dev",
+    "@conga/framework": "^2.0.0",
+    "@conga/framework-view": "^2.0.0",
+    "@conga/framework-view-twig": "^2.0.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "jasmine": "^2.6.0",

@@ -4,7 +4,7 @@
 
 This is a bundle for the [CongaJS](https://github.com/congajs/conga) framework which adds webpack support to a project.
 
-The purpose of this bundle is to provide an easy to use bridge between conga.js and webpack to compile your js/css/.etc assets and load them within your templates.
+The purpose of this bundle is to provide an easy to use bridge between conga.js and webpack in order to compile your js/css/.etc assets and load them in your templates.
 
 Additionally, the bundle will serve assets through webpack-dev-middleware and webpack-hot-middleware to provide quick compilation and page reloads while building your frontend applications.
 
@@ -73,10 +73,11 @@ It is recommended that the output file names contain a [hash] to enable "cache b
     <html>
     <head>
         <title>Webpack Test</title>
+        <link rel="stylesheet" href="{{ webpack_asset('app1', 'css') }}" />
     </head>
     <body>
         <h1>Webpack Test</h1>
-        <script src="{{ webpack_asset('app1') }}"></script>
+        <script src="{{ webpack_asset('app1', 'js') }}"></script>
     </body>
     </html>
 

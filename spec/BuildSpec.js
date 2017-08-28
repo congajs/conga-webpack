@@ -21,7 +21,6 @@ describe("Kernel", () => {
             '@conga/framework-view': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view'),
             '@conga/framework-view-twig': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view-twig'),
 
-
             'admin-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'admin-bundle'),
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
             '@conga/framework-webpack': path.join(__dirname, '..')
@@ -29,7 +28,7 @@ describe("Kernel", () => {
 
         kernel.boot(() => {
 
-            kernel.build({}, {}, () => {
+            kernel.build({}, { target: 'test' }, () => {
                 done();
             });
         });

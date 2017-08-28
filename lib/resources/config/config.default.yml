@@ -7,6 +7,6 @@ webpack:
     public.path: /build/
 
     # the paths to each of the webpack config files
-    config.paths:
+    config.paths: []
     #    - "demo-bundle:resources/public/webpack.config.dev.js"
     #    - "other-bundle:resources/public/webpack.config.dev.js"

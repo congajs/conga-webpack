@@ -14,10 +14,10 @@ services:
     conga.webpack.manager:
         constructor: "%conga.webpack.manager.constructor%"
         tags:
-            - { name: app.middleware, method: onKernelRegisterMiddleware, priority: 0 }
+            - { name: app.pre_middleware, method: onKernelRegisterMiddleware, priority: 0 }
             - { name: kernel.build, method: onKernelBuild, priority: 0 }
 
-    # template url() helper
+    # template webpack_asset() helper
     conga.template.helper.webpack:
         constructor: "%conga.webpack.helper.constructor%"
         arguments: ["@conga.webpack.registry"]
