@@ -6,13 +6,20 @@ webpack:
     # when development is off, force build to happen on each server start
     force.build: false
 
-    # the public path to serve files in dev mode under
-    public.dev.path: "/_dev/"
+    # the absolute path to build directory
+    build.dir: "%kernel.app_public_path%/build/"
 
-    # the public directory to build files to
-    build.path: "/build/"
+    # the relative public path to build directory
+    build.public.path: "/build/"
+
+    # the public path to serve dev mode files from
+    public.dev.path: "/_build_dev/"
 
     # the paths to each of the webpack config files
     config.paths: []
     #    - "demo-bundle:resources/public/webpack.config.dev.js"
     #    - "other-bundle:resources/public/webpack.config.dev.js"
+
+    # factory services to build configs
+    factories: []
+    #    - { service: "my.factory.service", method: factory }

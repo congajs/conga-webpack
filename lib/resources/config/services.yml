@@ -3,7 +3,8 @@ parameters:
     conga.webpack.manager.constructor: "@conga/framework-webpack:WebpackManager"
     conga.webpack.registry.constructor: "@conga/framework-webpack:WebpackRegistry"
     conga.webpack.helper.constructor: "@conga/framework-webpack:helper/WebpackHelper"
-
+    conga.webpack.builder.constructor: "@conga/framework-webpack:WebpackBuilder"
+    
 services:
 
     # the webpack registry
@@ -23,3 +24,8 @@ services:
         arguments: ["@conga.webpack.registry"]
         tags:
             - { name: template.helper }
+
+    # the webpack builder
+    conga.webpack.builder:
+        constructor: "%conga.webpack.builder.constructor%"
+        arguments: ["@service_container"]
