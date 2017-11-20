@@ -3,7 +3,7 @@ const path = require('path');
 const request = require('request');
 const Kernel = require('@conga/framework/lib/kernel/BuildKernel');
 
-describe("Kernel", () => {
+xdescribe("Kernel", () => {
 
     let kernel;
 

@@ -29,7 +29,7 @@ describe("Kernel", () => {
 
         kernel.boot(() => {
             registry = kernel.container.get('conga.webpack.registry');
-            //done();
+            done();
         });
 
     });
