@@ -1,6 +1,6 @@
 {
   "name": "@conga/framework-webpack",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Adds webpack to a conga.js project",
   "directories": {
     "test": "test"
