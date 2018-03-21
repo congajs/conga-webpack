@@ -16,7 +16,7 @@
   "author": "Marc Roulias",
   "license": "MIT",
   "engines": {
-    "node": "6.0.0"
+    "node": "8.0.0"
   },
   "dependencies": {
     "assets-webpack-plugin": "^3.5.1",
